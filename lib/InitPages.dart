@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Pageinit extends StatelessWidget {
-  const Pageinit({super.key});
+class InitPages extends StatelessWidget {
+  const InitPages({super.key});
+  
+  
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,20 @@ class Pageinit extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             child: Image(
               image: AssetImage('assets/images/loginBack-2.png'),
-            ),
+    ),
+         Center(child: Rows( mainAxisSize: MainAxisSize.min,
+        children: <Widget>[[
+          ElevatedButton(
+            style: style,
+            onPressed: null,
+            child: const Text('LOG IN'),
           ),
+          const SizedBox(height: 30),
+          ElevatedButton(
+            style: style,
+            onPressed: () {},
+            child: const Text('REGISTRAR')],))
+           ),
         ]),
       ),
     );

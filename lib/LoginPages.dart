@@ -8,17 +8,37 @@ class LoginPages extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.cyan[800],
       body: SingleChildScrollView(
-        child: Column(children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-                child: Image(
-                  image: const AssetImage('assets/images/logo.png'),
-                ),
-                TextDirection()),
+        padding: EdgeInsets.all(10),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Center(
+                    child: Image(
+                      image: const AssetImage('assets/images/logo.png'),
+                    ),
+                    child: Column(
+                        TextField(
+                          decoration: InputDecoration(
+                            labelText: 'Email',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            border: OutlineInputBorder(),
+                          ),
+                        ))),
+              ),
+            ],
           ),
-        ]),
+        ),
       ),
     );
   }

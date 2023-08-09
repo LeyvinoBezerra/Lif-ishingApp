@@ -1,4 +1,5 @@
-import 'package:fishing/pageinit.dart';
+import 'package:fishing/Login.dart';
+import 'package:fishing/InitPages.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'LIFISHING.App',
-      home: Loginpage(),
+      home: LoginPages(),
     );
   }
 }
