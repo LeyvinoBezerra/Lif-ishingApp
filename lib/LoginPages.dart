@@ -1,4 +1,10 @@
+import 'package:fishing/HomePages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'package:fishing/PerfilPages.dart';
+import 'package:fishing/HomePages.dart';
 
 class LoginPages extends StatelessWidget {
   const LoginPages({super.key});
@@ -12,32 +18,46 @@ class LoginPages extends StatelessWidget {
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            child: const Center(
-                child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 220,
-                    child: Image(
-                      image: AssetImage('assets/images/logorecortada.png'),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 220,
+                      child: Image(
+                        image: AssetImage('assets/images/logorecortada.png'),
+                      ),
                     ),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        border: OutlineInputBorder(),
+                      ),
                     ),
-                  ),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
+                    const TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(),
+                      ),
                     ),
-                  )
-                ],
+                    Positioned(
+                      height: 220,
+                      bottom: 100,
+                      left: 200,
+                      child: Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () => Get.to(HomePages()),
+                            child: const Text('LOG IN'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )),
+            ),
           ),
         ),
       ),

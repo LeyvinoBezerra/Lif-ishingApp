@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:fishing/HomePages.dart';
+import 'package:fishing/InitPages.dart';
 
 class RegisterPages extends StatelessWidget {
   const RegisterPages({super.key});
@@ -6,39 +9,52 @@ class RegisterPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan[800],
+      backgroundColor: const Color.fromARGB(232, 252, 253, 253),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(10),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: const Center(
-                  child: Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
-                        ),
-                      )
-                    ],
+        child: Stack(
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 220,
+                    child: Image(
+                      image: AssetImage('assets/images/logorecortada.png'),
+                    ),
                   ),
-                ),
+                  const TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 80,
+                    left: 200,
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => Get.to(const HomePages()),
+                          child: const Text('Registrar'),
+                        ),
+                        const SizedBox(width: 80),
+                        ElevatedButton(
+                            onPressed: () => Get.to(const InitPages()),
+                            child: const Text('Cancelar')),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
