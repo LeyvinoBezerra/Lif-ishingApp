@@ -1,10 +1,8 @@
-import 'package:fishing/HomePages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-import 'package:fishing/PerfilPages.dart';
-import 'package:fishing/HomePages.dart';
+import 'PefilPages.dart';
 
 class LoginPages extends StatelessWidget {
   const LoginPages({super.key});
@@ -12,7 +10,7 @@ class LoginPages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(232, 252, 253, 253),
+      backgroundColor: const Color.fromARGB(232, 252, 253, 253),
       body: Center(
         child: SingleChildScrollView(
           child: SizedBox(
@@ -48,7 +46,7 @@ class LoginPages extends StatelessWidget {
                       child: Row(
                         children: [
                           ElevatedButton(
-                            onPressed: () => Get.to(HomePages()),
+                            onPressed: () => Get.to(const PefilPages()),
                             child: const Text('LOG IN'),
                           ),
                         ],

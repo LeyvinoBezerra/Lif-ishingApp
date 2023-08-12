@@ -41,7 +41,7 @@ class RegisterPages extends StatelessWidget {
                     child: Row(
                       children: [
                         ElevatedButton(
-                          onPressed: () => Get.to(const HomePages()),
+                          onPressed: () => Get.to(HomePages()),
                           child: const Text('Registrar'),
                         ),
                         const SizedBox(width: 80),

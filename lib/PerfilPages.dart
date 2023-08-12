@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:fishing/LoginPages.dart';
 
-class PefilPages extends StatelessWidget {
-  const PefilPages({super.key});
+class PerfilPages extends StatelessWidget {
+  const PerfilPages({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Meu Perfil'),
+        title: const Text("LIF'ISHING"),
       ),
       body: const Padding(
         padding: EdgeInsets.all(16.0),
@@ -17,7 +19,7 @@ class PefilPages extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage('assets/images/PerfilHome.jpeg'),
+              backgroundImage: AssetImage('/assets/images/PerfilHome.jpeg'),
             ),
             SizedBox(height: 16),
             Text(
@@ -30,7 +32,7 @@ class PefilPages extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'Bio: Descrição do usuário e suas atividades na rede social.',
+              'Bio: Amo pescar nos meus momentos Livres.',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
@@ -40,7 +42,7 @@ class PefilPages extends StatelessWidget {
               children: [
                 Icon(Icons.location_on),
                 SizedBox(width: 8),
-                Text('Cidade, País'),
+                Text('Icapuí, Brasil'),
               ],
             ),
             SizedBox(height: 16),
@@ -49,7 +51,7 @@ class PefilPages extends StatelessWidget {
               children: [
                 Icon(Icons.work),
                 SizedBox(width: 8),
-                Text('Profissão ou Ocupação'),
+                Text('Professor'),
               ],
             ),
             SizedBox(height: 16),
@@ -58,7 +60,7 @@ class PefilPages extends StatelessWidget {
               children: [
                 Icon(Icons.email),
                 SizedBox(width: 8),
-                Text('email@dominio.com'),
+                Text('lorenzo@gmail.com'),
               ],
             ),
           ],
