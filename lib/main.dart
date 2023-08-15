@@ -1,5 +1,4 @@
 import 'package:fishing/InitPages.dart';
-import 'package:fishing/LoginPages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

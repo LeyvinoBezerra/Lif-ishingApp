@@ -1,8 +1,6 @@
-import 'package:fishing/PerfilPages.dart';
+import 'package:fishing/HomePages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import 'PerfilPages.dart';
 
 class LoginPages extends StatelessWidget {
@@ -47,7 +45,7 @@ class LoginPages extends StatelessWidget {
                       child: Row(
                         children: [
                           ElevatedButton(
-                            onPressed: () => Get.to(const PerfilPages()),
+                            onPressed: () => Get.to(const HomePages()),
                             child: const Text('LOG IN'),
                           ),
                         ],

@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:fishing/LoginPages.dart';
 
 class PerfilPages extends StatelessWidget {
   const PerfilPages({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("LIF'ISHING"),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage('/assets/images/PerfilHome.jpeg'),
+              backgroundImage: AssetImage('assets/images/PerfilHome.jpeg'),
             ),
             SizedBox(height: 16),
             Text(
@@ -38,7 +34,7 @@ class PerfilPages extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.location_on),
                 SizedBox(width: 8),
@@ -47,7 +43,7 @@ class PerfilPages extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.work),
                 SizedBox(width: 8),
@@ -56,12 +52,28 @@ class PerfilPages extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Icon(Icons.email),
                 SizedBox(width: 8),
                 Text('lorenzo@gmail.com'),
               ],
+            ),
+            SizedBox(height: 16),
+            Image(
+              image: AssetImage('assets/images/Numero1.jpeg'),
+            ),
+            SizedBox(height: 16),
+            Image(
+              image: AssetImage('assets/images/Numero2.jpeg'),
+            ),
+            SizedBox(height: 16),
+            Image(
+              image: AssetImage('assets/images/Numero3.jpeg'),
+            ),
+            SizedBox(height: 16),
+            Image(
+              image: AssetImage('assets/images/Numero4.jpeg'),
             ),
           ],
         ),

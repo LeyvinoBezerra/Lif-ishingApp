@@ -1,64 +1,87 @@
 import 'package:flutter/material.dart';
 
-class HomePages extends StatelessWidget {
+import 'PerfilPages.dart';
+
+class HomePages extends StatefulWidget {
+  const HomePages({super.key});
+
+  @override
+  State<HomePages> createState() => _HomePagesState();
+}
+
+class _HomePagesState extends State<HomePages> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Home',
+      style: optionStyle,
+    ),
+    PerfilPages()
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  Widget getbody() {
+    return _widgetOptions[_selectedIndex];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LIF'ISHING"),
+        backgroundColor: Colors.blue[700],
+        title: const Text("LIF'ISHING"),
         centerTitle: true,
-        leading: Icon(Icons.menu), // Ícone de menu, por exemplo
+        leading: const Icon(Icons.menu), // Ícone de menu, por exemplo
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications),
+            icon: const Icon(Icons.notifications),
             onPressed: () {
               // Ação de notificações
             },
           ),
         ],
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3, // Número de colunas no grid
-          mainAxisSpacing: 8.0, // Espaçamento vertical entre os itens
-          crossAxisSpacing: 8.0, // Espaçamento horizontal entre os itens
-        ),
-        itemCount: 12, // Número de itens/fotos no grid
-        itemBuilder: (BuildContext context, int index) {
-          return Placeholder(); // Substitua pelo widget de foto real
-        },
-      ),
+      body: getbody(),
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {
+                _onItemTapped(0);
                 // Ação para a página inicial
               },
             ),
+            // IconButton(
+            //   icon: const Icon(Icons.search),
+            //   onPressed: () {
+
+            //     // Ação para a página de pesquisa
+            //   },
+            // ),
+            // IconButton(
+            //   icon: const Icon(Icons.add_box),
+            //   onPressed: () {
+            //     // Ação para adicionar uma nova postagem
+            //   },
+            // ),
+            // IconButton(
+            //   icon: const Icon(Icons.favorite),
+            //   onPressed: () {
+            //     // Ação para mostrar curtidas/likes
+            //   },
+            // ),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.account_circle),
               onPressed: () {
-                // Ação para a página de pesquisa
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.add_box),
-              onPressed: () {
-                // Ação para adicionar uma nova postagem
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.favorite),
-              onPressed: () {
-                // Ação para mostrar curtidas/likes
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.account_circle),
-              onPressed: () {
+                _onItemTapped(1);
                 // Ação para o perfil do usuário
               },
             ),
