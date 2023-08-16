@@ -38,9 +38,11 @@ class LoginPages extends StatelessWidget {
                         border: OutlineInputBorder(),
                       ),
                     ),
+                    const SizedBox(height: 50),
                     Positioned(
-                      height: 220,
+                      height: 100,
                       bottom: 100,
+                      right: 50,
                       left: 200,
                       child: Row(
                         children: [

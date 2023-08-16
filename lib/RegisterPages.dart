@@ -36,15 +36,16 @@ class RegisterPages extends StatelessWidget {
                     ),
                   ),
                   Positioned(
+                    height: 80,
                     bottom: 80,
                     left: 200,
                     child: Row(
                       children: [
+                        const SizedBox(height: 80),
                         ElevatedButton(
-                          onPressed: () => Get.to(HomePages()),
+                          onPressed: () => Get.to(const HomePages()),
                           child: const Text('Registrar'),
                         ),
-                        const SizedBox(width: 80),
                         ElevatedButton(
                             onPressed: () => Get.to(const InitPages()),
                             child: const Text('Cancelar')),
